@@ -69,7 +69,100 @@ public class SequenceHandler {
 				ClickPage.Run(Instructions.Get(0), "Next");
 				break;
 			case 2:
-				Finish.Run();
+				IOtask2Block block0 = new IOtask2Block();
+				block0.totalCircles = 8;
+				block0.blockNum = 0;
+				block0.nTargets = 0;
+				block0.showPoints = false;
+				block0.showPostTrialFeedback=false;
+				block0.Run();
+				break;
+			case 3:
+				ClickPage.Run(Instructions.Get(1),  "Next");
+				break;
+			case 4:
+				IOtask2Block block1 = new IOtask2Block();
+				block1.totalCircles = 8;
+				block1.blockNum = 1;
+				block1.nTargets = 1;
+				block1.showPoints = false;
+				block1.showPostTrialFeedback=false;
+				block1.Run();
+				break;
+			case 5:
+				if (IOtask2BlockContext.getnHits() == 0) { 
+					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-2); //this line means that instead of moving forward we will repeat the previous instructions
+					ClickPage.Run(Instructions.Get(2), "Try again");
+				} else {
+					SequenceHandler.Next(); //move to the next instruction
+				}
+				break;
+			case 6:
+				ClickPage.Run(Instructions.Get(3), "Next");
+				break;
+			case 7:
+				IOtask2Block block2 = new IOtask2Block();
+				block2.totalCircles = 17;
+				block2.blockNum = 2;
+				block2.nTargets = 7;
+				block2.showPoints = false;
+				block2.showPostTrialFeedback=false;
+				block2.Run();
+				break;
+			case 8:
+				Slider.Run(Instructions.Get(4),  "None of them",  "All of them");
+				break;
+			case 9:
+				PHP.logData("slider1", ""+Slider.getSliderValue(), true);
+				break;
+			case 10:
+				ClickPage.Run(Instructions.Get(5), "Next");
+				break;
+			case 11:
+				IOtask2Block block3 = new IOtask2Block();
+				block3.totalCircles = 17;
+				block3.blockNum = 3;
+				block3.nTargets = 7;
+				block3.showPoints = false;
+				block3.showPostTrialFeedback=false;
+				block3.offloadCondition = Names.REMINDERS_MANDATORY_TARGETONLY;
+				block3.Run();
+				break;
+			case 12:
+				if (IOtask2BlockContext.getnHits() == 0) { 
+					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-2); //this line means that instead of moving forward we will repeat the previous instructions
+					ClickPage.Run(Instructions.Get(6), "Try again");
+				} else {
+					SequenceHandler.Next(); //move to the next instruction
+				}
+				break;
+			case 13:
+				ClickPage.Run(Instructions.Get(7), "Next");
+				break;
+			case 14:
+				ClickPage.Run(Instructions.Get(8), "Next");
+				break;
+			case 15:
+				ClickPage.Run(Instructions.Get(9),  "Next");
+				break;
+			case 16:
+				ClickPage.Run(Instructions.Get(10),  "Next");
+				break;
+			case 17:
+				ClickPage.Run(Instructions.Get(11),  "Next");
+				break;
+			case 18:
+				IOtask2Block block4 = new IOtask2Block();
+				block4.totalCircles = 17;
+				block4.blockNum = 4;
+				block4.nTargets = 7;
+				block4.showPoints = true;
+				block4.showPostTrialFeedback=false;
+				block4.ongoingStimType = Names.ONGOING_STIM_NUMBERS;
+				block4.standard13block = true;
+				
+				
+				block4.Run();
 				break;
 			}
 			break;

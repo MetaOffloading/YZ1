@@ -12,7 +12,7 @@ import com.sam.webtasks.iotask2.IOtask2BlockContext;
 public class IOtask2PostTrial {
 
 	public static void Run() {
-						
+			SequenceHandler.Next();			
 	}
 
 }
