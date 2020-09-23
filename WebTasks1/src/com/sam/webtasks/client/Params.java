@@ -8,7 +8,7 @@ public class Params {
 	public final static int nTrials = 8;
 	public final static int pointsPerPound = 300;
 	public static int progress = 0;
-	public static int countdownTime = 120;
+	public static int countdownTime = 90;
 	
 	public final static int maxPoints=2600;
 	public final static int pointsPerDollar=300;

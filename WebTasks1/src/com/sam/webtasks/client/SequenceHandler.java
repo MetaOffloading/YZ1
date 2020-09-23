@@ -66,9 +66,22 @@ public class SequenceHandler {
 			 * The code here defines the main sequence of events in the experiment *
 			 **********************************************************************/
 			case 1:
-				ClickPage.Run(Instructions.Get(0), "Next");
+				String data = Counterbalance.getFactorLevel("colourMeaning") + ",";
+				data = data + Counterbalance.getFactorLevel("conditionOrder") + ",";
+				data = data + TimeStamp.Now();
+				
+				RootPanel.get().clear();
+				
+				PHP.logData("start", data, true);
 				break;
 			case 2:
+				ProgressBar.Initialise();
+				ProgressBar.Show();
+				ProgressBar.SetProgress(0,  18);
+				
+				ClickPage.Run(Instructions.Get(0), "Next");
+				break;
+			case 3:
 				IOtask2Block block0 = new IOtask2Block();
 				block0.totalCircles = 8;
 				block0.blockNum = 0;
@@ -77,10 +90,10 @@ public class SequenceHandler {
 				block0.showPostTrialFeedback=false;
 				block0.Run();
 				break;
-			case 3:
+			case 4:
 				ClickPage.Run(Instructions.Get(1),  "Next");
 				break;
-			case 4:
+			case 5:
 				IOtask2Block block1 = new IOtask2Block();
 				block1.totalCircles = 8;
 				block1.blockNum = 1;
@@ -89,7 +102,7 @@ public class SequenceHandler {
 				block1.showPostTrialFeedback=false;
 				block1.Run();
 				break;
-			case 5:
+			case 6:
 				if (IOtask2BlockContext.getnHits() == 0) { 
 					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-2); //this line means that instead of moving forward we will repeat the previous instructions
 					ClickPage.Run(Instructions.Get(2), "Try again");
@@ -97,10 +110,10 @@ public class SequenceHandler {
 					SequenceHandler.Next(); //move to the next instruction
 				}
 				break;
-			case 6:
+			case 7:
 				ClickPage.Run(Instructions.Get(3), "Next");
 				break;
-			case 7:
+			case 8:
 				IOtask2Block block2 = new IOtask2Block();
 				block2.totalCircles = 17;
 				block2.blockNum = 2;
@@ -109,16 +122,16 @@ public class SequenceHandler {
 				block2.showPostTrialFeedback=false;
 				block2.Run();
 				break;
-			case 8:
+			case 9:
 				Slider.Run(Instructions.Get(4),  "None of them",  "All of them");
 				break;
-			case 9:
+			case 10:
 				PHP.logData("slider1", ""+Slider.getSliderValue(), true);
 				break;
-			case 10:
+			case 11:
 				ClickPage.Run(Instructions.Get(5), "Next");
 				break;
-			case 11:
+			case 12:
 				IOtask2Block block3 = new IOtask2Block();
 				block3.totalCircles = 17;
 				block3.blockNum = 3;
@@ -128,7 +141,7 @@ public class SequenceHandler {
 				block3.offloadCondition = Names.REMINDERS_MANDATORY_TARGETONLY;
 				block3.Run();
 				break;
-			case 12:
+			case 13:
 				if (IOtask2BlockContext.getnHits() == 0) { 
 					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-2); //this line means that instead of moving forward we will repeat the previous instructions
 					ClickPage.Run(Instructions.Get(6), "Try again");
@@ -136,22 +149,28 @@ public class SequenceHandler {
 					SequenceHandler.Next(); //move to the next instruction
 				}
 				break;
-			case 13:
-				ClickPage.Run(Instructions.Get(7), "Next");
-				break;
 			case 14:
-				ClickPage.Run(Instructions.Get(8), "Next");
+				Slider.Run(Instructions.Get(7),  "None of them",  "All of them");
 				break;
 			case 15:
-				ClickPage.Run(Instructions.Get(9),  "Next");
+				PHP.logData("slider2", ""+Slider.getSliderValue(), true);
 				break;
 			case 16:
-				ClickPage.Run(Instructions.Get(10),  "Next");
+				ClickPage.Run(Instructions.Get(8), "Next");
 				break;
 			case 17:
-				ClickPage.Run(Instructions.Get(11),  "Next");
+				ClickPage.Run(Instructions.Get(9), "Next");
 				break;
 			case 18:
+				ClickPage.Run(Instructions.Get(10),  "Next");
+				break;
+			case 19:
+				ClickPage.Run(Instructions.Get(11),  "Next");
+				break;
+			case 20:
+				ClickPage.Run(Instructions.Get(12),  "Next");
+				break;
+			case 21:
 				IOtask2Block block4 = new IOtask2Block();
 				block4.totalCircles = 17;
 				block4.blockNum = 4;
@@ -160,10 +179,25 @@ public class SequenceHandler {
 				block4.showPostTrialFeedback=false;
 				block4.ongoingStimType = Names.ONGOING_STIM_NUMBERS;
 				block4.standard13block = true;
+				block4.countdownTimer = true;
 				
 				
 				block4.Run();
 				break;
+			case 22:
+				ProgressBar.Hide();
+				
+				String data2 = TimeStamp.Now() + ",";
+				data2 = data2 + Counterbalance.getFactorLevel("forcedOrder") + ",";
+				data2 = data2 + Counterbalance.getFactorLevel("buttonPositions") + ",";
+				data2 = data2 + Counterbalance.getFactorLevel("buttonColours");
+
+				PHP.UpdateStatus("finished");
+				PHP.logData("finish", data2, true);
+				break;
+			case 23:
+				ClickPage.Run(Instructions.Get(13),  "Finish");
+				break;	
 			}
 			break;
 

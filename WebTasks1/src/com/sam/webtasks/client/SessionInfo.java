@@ -8,7 +8,7 @@ public class SessionInfo {
 	/*******************************************************/
 		
 	//are we just testing locally? set this to true if so and it won't try to log data to the database
-	public static boolean localTesting=true;
+	public static boolean localTesting=false;
 	public static boolean runInfoConsentPages=false; //should we do the info and consent pages?
 	public static int experimentType = Names.EXPERIMENT_STANDALONE;
 	
@@ -16,7 +16,7 @@ public class SessionInfo {
 	public static String experimentCode="YZ1";
 	
 	//which version of the experiment is this?
-	public static int experimentVersion=3;
+	public static int experimentVersion=1;
 	
 	//what is the minimum permitted screen size in pixels?
 	//if the screen is smaller than this the participant will be asked

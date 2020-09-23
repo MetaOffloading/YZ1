@@ -87,8 +87,7 @@ public class IOtask2PreTrial {
 
 		//reminder button
 		if (IOtask2BlockContext.getRewardFrame() == Names.GAIN_FRAME) {
-			displayString = "Gain " + points + " points<br>each time you remember<br><br>"
-					        + "Reminders allowed";		
+			displayString = "Special circles worth<br><b>" + points + " </b>points<br><br>" + "Reminders allowed";	
 		} else {
 			displayString = "Lose " + (IOtask2BlockContext.maxPoints() - points)
 					        + " points<br>each time you remember<br><br>Reminders allowed";
@@ -102,9 +101,7 @@ public class IOtask2PreTrial {
 
 		//no-reminder button
 		if (IOtask2BlockContext.getRewardFrame() == Names.GAIN_FRAME) {
-			displayString = "Gain " + IOtask2BlockContext.maxPoints()
-					        + " points<br>each time you remember<br><br>"
-					        + "Reminders not allowed";		
+			displayString = "Special circles worth<br><b>" + IOtask2BlockContext.maxPoints() + " </b>points<br><br>" + "Reminders <b>not</b> allowed";		
 		} else {
 			displayString = "Lose 0 points<br>each time you remember<br><br>Reminders not allowed";
 		}

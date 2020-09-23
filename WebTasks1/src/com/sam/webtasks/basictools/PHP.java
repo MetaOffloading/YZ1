@@ -162,13 +162,13 @@ public class PHP {
 							} else {
 								// otherwise throw an error
 								Window.alert(
-										"Your ID has previously been used to access this experiment. Unfortunately this means you will not be able to take part again and you should return the HIT.");
+										"This participant ID has already been used. Please refresh this page and try again with a different ID.");
 							}
 							break;
 						case Names.ELIGIBILITY_NEVERCOMPLETED:
 							if (phpOutput.contains("finished")) {
 								Window.alert(
-										"Your ID has previously been used to access this experiment. Unfortunately this means you will not be able to take part again and you should return the HIT.");
+										"This participant ID has already been used. Please refresh this page and try again with a different ID.");
 							} else if (phpOutput.contains("unknown")) {
 								// fine to continue if the ID hasn't been used before
 								SequenceHandler.Next();

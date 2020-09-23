@@ -63,10 +63,17 @@ public class Instructions {
 			i="You need to respond correctly to at least 5 of the special circles to continue.";
 			break;
 		case 7:
+			i="Now that you have had some practice with using reminders, we would like you to tell us "
+                    + "how accurately you can perform the task <b>when you use reminders to help you</b>.<br><br>Please use the scale below to indicate what percentage of "
+                    + "the special circles you can correctly drag to the instructed side of the square on average, when you use reminders. 100% "
+                    + "would mean that you always get every single one correct. 0% would mean that you can never "
+                    + "get any of them correct.";
+			break;
+		case 8:
 			i="From now on, you will score points every time you drag one of the special circles "  
 					+ "to the correct location.<br><br>You should try to score as many points as you can.";
 			break;
-		case 8:
+		case 9:
 			i="Sometimes when you do the task, you will have to do it without setting any reminders.<br><br>"
                     + "When this happens, you will score 10 points for every special circle you remember.<br><br>"
                     + "You will always be given clear instructions what you should do. In this case you will be "
@@ -74,7 +81,7 @@ public class Instructions {
                     + "When this happens, "
                     + "the computer will not let you set any reminders.";
 			break;
-		case 9:
+		case 10:
 			i="Other times, you will have to set reminders for all the special circles.<br><br>When "
                 + "this happens, you will also score 10 points for every special circle you remember.<br><br>"
                 + "In this case, you will be told \"This time you <b>must</b> set a reminder for every special circle\" "
@@ -82,7 +89,7 @@ public class Instructions {
                 + "When this happens, the computer will make sure that you always set a reminder for every "
                 + "circle and it will not let you continue if you do not.";
 		break;
-		case 10:
+		case 11:
 			i="Sometimes, you will have a choice between two options when you do the task. One option will be to do the task "
                 + "without being able to set any reminders. If you choose this option, you will always score "
                 + "10 points for every special circle you remember.<br><br>The other option will be to "
@@ -95,10 +102,13 @@ public class Instructions {
                 + "score more points by just using your own memory and earning 10 points for each special "
                 + "circle, you should choose this option instead.";
 		break;
-		case 11:
+		case 12:
 			i="When you are presented with a choice like this, it is completely up to you. "
                     + "You should do whatever you think will allow you to score the highest number of points.";
 			break;	
+		case 13:
+			i="You have now completed the experiment.<br><br>Thank you.";
+			break;
 		}
 
 		return(i);	
