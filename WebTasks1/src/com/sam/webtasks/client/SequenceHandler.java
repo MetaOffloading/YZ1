@@ -79,7 +79,7 @@ public class SequenceHandler {
 				ProgressBar.Show();
 				ProgressBar.SetProgress(0,  18);
 				
-				ClickPage.Run(Instructions.Get(0), "Next");
+				ClickPage.Run(Instructions.Get(0), "下一页");
 				break;
 			case 3:
 				IOtask2Block block0 = new IOtask2Block();
@@ -91,7 +91,7 @@ public class SequenceHandler {
 				block0.Run();
 				break;
 			case 4:
-				ClickPage.Run(Instructions.Get(1),  "Next");
+				ClickPage.Run(Instructions.Get(1),  "下一页");
 				break;
 			case 5:
 				IOtask2Block block1 = new IOtask2Block();
@@ -105,13 +105,13 @@ public class SequenceHandler {
 			case 6:
 				if (IOtask2BlockContext.getnHits() == 0) { 
 					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-2); //this line means that instead of moving forward we will repeat the previous instructions
-					ClickPage.Run(Instructions.Get(2), "Try again");
+					ClickPage.Run(Instructions.Get(2), "请再来一次");
 				} else {
 					SequenceHandler.Next(); //move to the next instruction
 				}
 				break;
 			case 7:
-				ClickPage.Run(Instructions.Get(3), "Next");
+				ClickPage.Run(Instructions.Get(3), "下一页");
 				break;
 			case 8:
 				IOtask2Block block2 = new IOtask2Block();
@@ -123,13 +123,13 @@ public class SequenceHandler {
 				block2.Run();
 				break;
 			case 9:
-				Slider.Run(Instructions.Get(4),  "None of them",  "All of them");
+				Slider.Run(Instructions.Get(4),  "一个都不能",  "全部都可以");
 				break;
 			case 10:
 				PHP.logData("slider1", ""+Slider.getSliderValue(), true);
 				break;
 			case 11:
-				ClickPage.Run(Instructions.Get(5), "Next");
+				ClickPage.Run(Instructions.Get(5), "下一页");
 				break;
 			case 12:
 				IOtask2Block block3 = new IOtask2Block();
@@ -144,31 +144,31 @@ public class SequenceHandler {
 			case 13:
 				if (IOtask2BlockContext.getnHits() == 0) { 
 					SequenceHandler.SetPosition(SequenceHandler.GetPosition()-2); //this line means that instead of moving forward we will repeat the previous instructions
-					ClickPage.Run(Instructions.Get(6), "Try again");
+					ClickPage.Run(Instructions.Get(6), "请再来一次");
 				} else {
 					SequenceHandler.Next(); //move to the next instruction
 				}
 				break;
 			case 14:
-				Slider.Run(Instructions.Get(7),  "None of them",  "All of them");
+				Slider.Run(Instructions.Get(7),  "一个都不能",  "全部都可以");
 				break;
 			case 15:
 				PHP.logData("slider2", ""+Slider.getSliderValue(), true);
 				break;
 			case 16:
-				ClickPage.Run(Instructions.Get(8), "Next");
+				ClickPage.Run(Instructions.Get(8), "下一页");
 				break;
 			case 17:
-				ClickPage.Run(Instructions.Get(9), "Next");
+				ClickPage.Run(Instructions.Get(9), "下一页");
 				break;
 			case 18:
-				ClickPage.Run(Instructions.Get(10),  "Next");
+				ClickPage.Run(Instructions.Get(10),  "下一页");
 				break;
 			case 19:
-				ClickPage.Run(Instructions.Get(11),  "Next");
+				ClickPage.Run(Instructions.Get(11),  "下一页");
 				break;
 			case 20:
-				ClickPage.Run(Instructions.Get(12),  "Next");
+				ClickPage.Run(Instructions.Get(12),  "下一页");
 				break;
 			case 21:
 				IOtask2Block block4 = new IOtask2Block();
@@ -196,7 +196,7 @@ public class SequenceHandler {
 				PHP.logData("finish", data2, true);
 				break;
 			case 23:
-				ClickPage.Run(Instructions.Get(13),  "Finish");
+				ClickPage.Run(Instructions.Get(13),  "结束实验");
 				break;	
 			}
 			break;

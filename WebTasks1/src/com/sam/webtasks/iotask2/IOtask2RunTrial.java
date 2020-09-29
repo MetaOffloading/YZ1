@@ -465,8 +465,7 @@ public class IOtask2RunTrial {
 									new Timer() {
 										public void run() {
 											if (IOtask2BlockContext.getReminderFlag() > -1) {
-												Window.alert("You need to set a reminder for circle number " +
-										                 circleText[IOtask2BlockContext.getReminderFlag()].getText());
+												Window.alert("你需要对" + circleText[IOtask2BlockContext.getReminderFlag()].getText() + "号圆圈设置标记提醒");
 											}
 											
 											circles[IOtask2BlockContext.getNextCircle()]

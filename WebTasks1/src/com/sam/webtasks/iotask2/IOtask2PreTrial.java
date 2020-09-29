@@ -38,76 +38,74 @@ public class IOtask2PreTrial {
 			displayString = displayString + "You have " + IOtask2BlockContext.getTotalPoints()
 					+ " points (" + IOtask2BlockContext.getMoneyString() + ").<br><br>";
 			} else {
-				displayString = displayString + "You have scored " + IOtask2BlockContext.getTotalPoints()
-				+ " points.<br><br>";
+				displayString = displayString + "你现在的累计积分是" + IOtask2BlockContext.getTotalPoints()
+				+ "分<br><br>";
 			}
 		}
 
 		int points = IOtask2BlockContext.currentTargetValue();
 
 		if (points == 0) {
-			displayString = displayString + "This time you must do the task <b>without</b> setting any reminders.<br><br>";
+			displayString = displayString + "这次你<b>不能</b>通过设置标记提醒完成任务。<br><br>";
 			
 			if (IOtask2BlockContext.getRewardFrame() == Names.GAIN_FRAME) {
-				displayString = displayString + "You will gain " + IOtask2BlockContext.maxPoints() 
-				+ " points for every special circle that you remember.";
+				displayString = displayString + "每移出一个特殊的圆圈，你将获得" + IOtask2BlockContext.maxPoints()
+				+ "分";
 			} else {
 				displayString = displayString + "You will lose " + IOtask2BlockContext.maxPoints()
 				+ " points for every special circle that you forget.";
 			}
 			
-			displayString = displayString + "<br><br>Please click the button below to start.";
+			displayString = displayString + "<br><br>请点击下方按钮开始任务";
 		} else if (points == IOtask2BlockContext.maxPoints()) {
-			displayString = displayString + "This time you <b>must</b> set a reminder for every special circle.<br><br>";
+			displayString = displayString + "这次你 <b>必须</b> 通过对每一个特殊圆圈设置标记提醒来完成任务<br><br>";
 					
 			if (IOtask2BlockContext.getRewardFrame() == Names.GAIN_FRAME) {
-				displayString = displayString + "You will gain " + IOtask2BlockContext.maxPoints() 
-				+ " points for every special circle that you remember.";
+				displayString = displayString + "每移出一个特殊的圆圈，你将获得" + IOtask2BlockContext.maxPoints() + "分";
 			} else {
 				displayString = displayString + "You will lose " + + IOtask2BlockContext.maxPoints() 
 				+ " points for every special circle that you forget.";
 			}
 			
-			displayString = displayString + "<br><br>Please click the button below to start.";
+			displayString = displayString + "<br><br>请点击下方按钮开始任务";
 		} else {
-			displayString = displayString + "This time you must make a decision.<br><br>";
+			displayString = displayString + "这次你需要对任务策略进行一个选择。<br><br>";
 					
 			if (IOtask2BlockContext.getRewardFrame() == Names.GAIN_FRAME) {
-				displayString = displayString + "If you forget a special circle, you will not score any points.";
+				displayString = displayString + "如果你忘记将一个特殊圆圈从对应边框移出，你将不会得分。";
 			} else {
-				displayString = displayString + "If you forget a special circle, you will lose " 
-			    + IOtask2BlockContext.maxPoints() + " points.";
+				displayString = displayString + "如果你忘记将一个特殊圆圈从对应边框移出，你将会失去 " + IOtask2BlockContext.maxPoints() + " 分";
 			}
 			
-			displayString = displayString + "<br><br>You have a choice for what happens when you remember. "
-					+ "Please click the option that you prefer.";
+			displayString = displayString + "当选择设置标记提醒的时候，你也可不必对每一个特殊圆圈进行标记提醒。<br><br>"
+					+ "请通过点击下方按钮选择您的任务策略，并开始本次任务";
 		}
 
 		displayText.setHTML(displayString);
 
 		//reminder button
 		if (IOtask2BlockContext.getRewardFrame() == Names.GAIN_FRAME) {
-			displayString = "Special circles worth<br><b>" + points + " </b>points<br><br>" + "Reminders allowed";	
+			displayString = "每个特殊圆圈值<br><b>" + points + " </b>分<br><br>" + "设置标记提醒";
 		} else {
 			displayString = "Lose " + (IOtask2BlockContext.maxPoints() - points)
 					        + " points<br>each time you remember<br><br>Reminders allowed";
 		}
 		
 		if (points == IOtask2BlockContext.maxPoints()) {
-			displayString = "You <b>must</b> set reminders";
+			displayString = "对每一个特殊圆圈<b>设置</b>标记提醒";
 		}
 		
 		final Button reminderButton = new Button(displayString);
 
 		//no-reminder button
 		if (IOtask2BlockContext.getRewardFrame() == Names.GAIN_FRAME) {
-			displayString = "Special circles worth<br><b>" + IOtask2BlockContext.maxPoints() + " </b>points<br><br>" + "Reminders <b>not</b> allowed";		
+			displayString = "每个特殊圆圈值<br><b>" + IOtask2BlockContext.maxPoints() + " </b>分<br><br>" + " <b>不设置</b> 标记提醒";
 		} else {
 			displayString = "Lose 0 points<br>each time you remember<br><br>Reminders not allowed";
 		}
 		
 		if (points == 0) {
-			displayString = "Reminders <b>not</b> allowed";
+			displayString = "<b>不设置</b>标记提醒";
 		}
 		
 		final Button noReminderButton = new Button(displayString);
